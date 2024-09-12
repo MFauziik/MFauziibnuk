@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+<link rel="stylesheet" href="tugaspagatot.css">
+<style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: aqua;}
+
+.foto  {
+margin: 10px;    
+}
+
+.navbar {
+    background-color: #1a1716;
+    color: #fff;
+    padding: 17px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;   
+padding: 0 20px;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 21px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle .bar {
+    background-color: #fff; height: 3px;  width: 100%;   transition: all 0.3s ease;
+}
+
+.nav-links {
+    list-style: none; display: flex;  margin: 0;  padding: 0;
+}
+
+.nav-links li {  margin: 0 15px; }
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: black; background-color: white; padding: 5px; border-radius: 12px;}
+
+/* Responsive styles */
+@media (max-width: 768px) { 
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        padding: 0;
+    }
+
+    .nav-links.active { display: flex; }
+    .nav-links li {  margin: 15px 0;  text-align: center; }
+    .nav-links a { font-size: 20px; }
+}
+
+/* Hide menu-toggle on larger screens */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+/* About Section */
+.about { padding: 10px; margin-top: 10%; background-color: black; color: white;  text-align: center; width: 40%; margin-left: 30%; padding-top: 2px; margin-bottom: 10%;}
+.about h2 { font-size: 36px; margin-bottom: 20px; }
+.about p { font-size: 18px; line-height: 1.6; margin: 0 auto; max-width: 800px;}
+.home { margin-top: 15%; text-align: center; font-size: larger;}
+
+/* skill fzz */
+.Skill {
+
+}
+.Skill h2 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 20px;
+margin-bottom: 50px;
+}
+.wrapper{
+    width: 400px;
+    font-family: 'Roboto', sans-serif;
+margin:0 auto;
+}
+.skill {
+    margin-bottom: 35px;
+    position: relative;
+        overflow-x:hidden;
+        
+}
+.skill > p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1716;
+    margin: 0;
+}
+.skill:before{
+    width: 100%;
+    height: 5px;
+    content: "";
+    display: block;
+    position: absolute;
+    background: #959595;
+    bottom: 0;
+    padding: 4px;
+}
+.skill-bar {
+    width: 100%;
+    height: 5px;
+    background:green;
+    display: block;
+    position: relative;
+    padding: 4px;
+}
+
+/* SKILL 1 */
+.skill1{
+    width: 75%;
+        
+}
+.skill-bar span{
+    position: absolute;
+    border-top: 5px solid #f4392f;
+    top: -30px;
+    padding: 0;
+    font-size: 18px;
+    padding: 3px 0;
+    font-weight: 500;
+}
+.skill-bar {
+    position: relative;
+        
+}
+
+.skill1 .skill-count1 {
+    right: 0;
+}
+/* SKILL 2 */
+.skill2{
+    width: 55%;
+}
+
+.skill2 .skill-count2 {
+    right: 0;
+}
+/* SKILL 3 */
+.skill3{
+    width: 75%;
+}
+.skill3 .skill-count3 {
+    right: 0;
+}
+.github-source{
+float:right;
+display:block;
+color:#fff;
+margin:0 20px;
+position: relative;
+z-index:100;
+top:0;
+}
+.github-source i{
+font-size:50px;
+color:#000
+}
+.contact {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+</style>
+<script src="tugaspagatot.js">
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+    });
+    
+    // Menambahkan event listener untuk setiap link dalam menu
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+        navLinks.classList.remove('active'); // Menutup menu setelah item diklik
+        });
+    });
+});
+(function($){
+    new WOW().init();
+})(jQuery);
+</script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">MyWebsite</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1 style="text-align: center; padding-top: 7%; padding-bottom: 5%; width: 100%;
+     background-color: black; color: white;" id="home">Home</h1>
+    <section class="home">
+       
+        <h1>HELLO GUYS</h1>
+<h1>WELCOME TO MY WEBSITE</h1>
+    </section>
+        <h2 id="about" style="width: 100%; padding-bottom: 5%; padding-top: 5%; background-color: black; color: white; text-align: center; margin-top: 35%;">About Me</h2>
+<section class="about" >
+
+<img src="WhatsApp Image 2024-07-14 at 08.28.18.jpeg" 
+style="width: 125px; height: 125px; border-radius: 50%; margin-bottom: 30px;" alt="my photo">
+    <p>
+        Halo, saya Muhammad Fauzi Ibnu Kosim, Seorang pelajar di Smkn 1 ciomas yang mengambil jurusan PPLG dan mempunyai skill di HTML dan CSS
+    </p>
+</section>
+<section class="Skill">
+<h2 id="skill">My Skills</h2>
+<a class="github-source" href="https://github.com/speeedsam/CSS3-Animated-Skill-Prograss-bar"  target="_blank"><i class="fa fa-github"></i></a>
+<div class="wrapper">
+        <div class="skill">
+            <p>HTML</p>
+            <div class="skill-bar skill1 wow slideInLeft animated">
+                <span class="skill-count1">75%</span>
+            </div>
+        </div>
+        <div class="skill">
+            <p>CSS</p>
+            <div class="skill-bar skill2 wow slideInLeft animated">
+                 <span class="skill-count2">55%</span>
+            </div>
+        </div>
+        <div class="skill">
+            <p>Ms Word</p>
+            <div class="skill-bar skill3 wow slideInLeft animated">
+                <span class="skill-count3">75%</span>
+            </div>
+        </div>
+   
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+<ul>
+    <li>WhatsApp : +6285218337796</li>
+    <li>Email : fauziopoy00@gmail.com</li>
+    <li>Instagram : @fauziiasphoenixly</li>
+</ul>
+</section>
+</body>
+</html>
